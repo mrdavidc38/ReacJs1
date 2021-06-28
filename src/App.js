@@ -11,6 +11,7 @@ const [productos, guardar]=useState(
   {id:3, nombre:'camisa 3', precio:30},
   {id:4, nombre:'camisa 4', precio:20}]
   );
+const [carrito, agragarProducto]=useState([]);
 
   const fecha=new Date().getFullYear();
   return (
