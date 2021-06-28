@@ -11,7 +11,7 @@ const [productos, guardar]=useState(
   {id:3, nombre:'camisa 3', precio:30},
   {id:4, nombre:'camisa 4', precio:20}]
   );
-const [carrito, agragarProducto]=useState([]);
+const [carrito, agregarProducto]=useState([]);
 
   const fecha=new Date().getFullYear();
   return (
@@ -23,7 +23,11 @@ const [carrito, agragarProducto]=useState([]);
    <h1>Lista de productos</h1>
    { productos.map(producto=>(
         <Producto 
+        key={producto.id}
+        productos={productos}
         producto={producto}
+        carrito={carrito}
+        agregarProducto={agregarProducto}
         />
         ))}
 
