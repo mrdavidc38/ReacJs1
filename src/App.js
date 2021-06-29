@@ -2,6 +2,7 @@ import React, {Fragment, useState} from 'react';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Producto from './components/Producto';
+import Carrito from './components/Carrito';
 function App() {
 
 //crear un arreglo con objetos
@@ -11,9 +12,11 @@ const [productos, guardar]=useState(
   {id:3, nombre:'camisa 3', precio:30},
   {id:4, nombre:'camisa 4', precio:20}]
   );
+  // crear un state de carrito con su funcion modioficadora
 const [carrito, agregarProducto]=useState([]);
 
-  const fecha=new Date().getFullYear();
+//variable fecha paar enviar como props
+const fecha=new Date().getFullYear();
   return (
     <Fragment>
    <Header 
@@ -30,6 +33,13 @@ const [carrito, agregarProducto]=useState([]);
         agregarProducto={agregarProducto}
         />
         ))}
+
+        <Carrito
+        
+        carrito={carrito}
+        agregarProducto={agregarProducto}
+        
+        />
 
    <Footer
    fecha={fecha}
